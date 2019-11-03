@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pmam</title>
+</head>
+<body>
+        <button onclick="myFunction()">Try it</button>
+
+        <p>Click the button to display the time.</p>
+        
+        <p id="Current Time"></p> 
+<script>
+
+
+function addZero(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+
+function myFunction() {
+  var d = new Date();
+  var x = document.getElementById("Current Time");
+  var h = addZero(d.getHours());
+  var m = addZero(d.getMinutes());
+  var s = addZero(d.getSeconds());
+  x.innerHTML = h + ":" + m + ":" + s;
+}
+
+
+const dt = new Date();
+
+var hour = dt.getHours();
+console.log(hour);
+
+var minutes = dt.getMinutes();
+console.log(minutes);
+
+var prepend = hour>= 12 ? "PM": "AM"
+
+console.log(prepend);
+
+
+  hour = (hour >= 12)? hour - 12: hour;
+  if (hour===0 && prepand===' PM ') 
+  { 
+  if (minute===0 && second===0)
+  { 
+  hour=12;
+  prepand=' Noon';
+  } 
+  else
+  { 
+  hour=12;
+  prepand=' PM';
+  } 
+  } 
+  if (hour===0 && prepand===' AM ') 
+  { 
+  if (minute===0 && second===0)
+  { 
+  hour=12;
+  prepand=' Midnight';
+  } 
+  else
+  { 
+  hour=12;
+  prepand=' AM';
+  } 
+  } 
+
+
+
+</script>
+
+</body>
+</html>
